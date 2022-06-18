@@ -7,7 +7,7 @@ import SubHeader from "../components/SubHeader";
 
 
 const CampsiteDetailPage = () => {
-    const {campsiteId} = useParams();
+    const {campsiteId} = useParams();                   //const {campsiteId} MUST match with path='directory/:campsiteId' from the <Route/> in App.js
     const campsite = selectCampsiteById(campsiteId);
     return ( 
         <Container>
