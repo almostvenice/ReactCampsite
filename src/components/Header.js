@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
     return ( 
-        <Navbar dark color='primary' sticky='top' expand='md'>
+        <Navbar dark color='primary' sticky='fixed' expand='md'>
             <NavbarBrand href='/' className='ms-5'>
               <img src={NucampLogo} alt='nucamp logo' className='float-start'/>
               <h1 className='mt-1'>Nucamp</h1>
@@ -24,7 +24,7 @@ const Header = () => {
                 <Nav className='ms-auto' navbar>
                     <NavItem>
                         <NavLink className='nav-link' to='/'>
-                            <i className='fa fa-home fa-lg'/> Home
+                            <i class="fa-solid fa-house">Home</i>
                         </NavLink>
                     </NavItem>
                     <NavItem>

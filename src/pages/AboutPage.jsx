@@ -44,7 +44,7 @@ const AboutPage = () => {
                 <Col>
                     <Card className='bg-light mt-3'>
                         <CardBody>
-                            <blockquote className="blockquote-footer">
+                            <blockquote value='blockquote' className="blockquote-footer">
                                 <p>
                                     I will not follow where the path may lead, but I
                                     will go where there is no path, and I will leave
@@ -62,7 +62,7 @@ const AboutPage = () => {
                     </Card>
                 </Col>
             </Row>
-            <Row>
+            <Row className='row-content'>
                 <Col xs='12'>
                     <h3>Community Partners</h3>
                 </Col>
