@@ -2,17 +2,17 @@ import {Button, Label, Col, FormGroup} from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import validateContactForm from '../utils/validateContactForm';
 
-const ContactForm = () => {
+const ContactForm = () => { 
     
     const handleSubmit = (values, { resetForm }) => {
-        console.log('form values:', values);
+        console.log('form values:', values);            // since there is no database/backend this function just logs the values in the form
         console.log('JSON:', JSON.stringify(values));
-        resetForm();
+        resetForm();                                   // reset the form on Submit
     }
 
     return ( 
         <Formik
-            initialValues={{
+            initialValues={{    // must give initial values of each of the items/fields on the form.
                 firstName: '',
                 lastName: '',
                 phoneNum: '',
@@ -21,8 +21,8 @@ const ContactForm = () => {
                 contactType: 'By Phone',
                 feedback: ''
             }}
-            onSubmit={handleSubmit}
-            validate={validateContactForm}
+            onSubmit={handleSubmit}         // when the form is submitted, run handleSubmit from line 7
+            validate={validateContactForm}  // use the javascript utility code we made in validateContactForm.js as the validation for this form
         >
             <Form>
                 <FormGroup row>
@@ -30,13 +30,13 @@ const ContactForm = () => {
                         First Name
                     </Label>
                     <Col md='10'>
-                        <Field
+                        <Field          //this field has the same name as the label above to link together when clicked
                             name='firstName'
                             placeholder='First Name'
                             className='form-control'
                         />
                         <ErrorMessage name='firstName'>
-                            {(msg) => <p className='text-danger'>{msg}</p>}
+                            {(msg) => <p className='text-danger'>{msg}</p>} {/* for each error msg create a paragraph witht the msg in red color */}
                         </ErrorMessage>
                     </Col>
                 </FormGroup>

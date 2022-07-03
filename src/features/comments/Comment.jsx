@@ -1,5 +1,6 @@
 import formatDate from './../../utils/formatDate';
 
+//an individual comment
 const Comment = ({comment}) => {
     const { text: commentText, rating, author, date } = comment;
     return ( 

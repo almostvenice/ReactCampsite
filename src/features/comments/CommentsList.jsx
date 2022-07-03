@@ -10,7 +10,7 @@ const CommentsList = ({campsiteId}) => {
         return (
             <Col md='5' className='m-1'>
                 <h4>Comments</h4>
-                {comments.map(comment => {
+                {comments.map(comment => {  {/*for each comment inside the [comments] array create a <Comment> and pass it the [id] and [comment] content */}
                     return <Comment key={comment.id} comment={comment}/>
                 })}
                 <CommentForm campsiteId={campsiteId}></CommentForm>

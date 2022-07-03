@@ -9,9 +9,10 @@ import {
   NavItem
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import UserLoginForm from './../features/user/UserLoginForm';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);  //menuOpen will be set to false by default
     return ( 
         <Navbar dark color='primary' sticky='fixed' expand='md'>
             <NavbarBrand href='/' className='ms-5'>
@@ -19,8 +20,8 @@ const Header = () => {
               <h1 className='mt-1'>Nucamp</h1>
             </NavbarBrand>
 
-            <NavbarToggler onClick={() => setMenuOpen(!menuOpen)}/>
-            <Collapse isOpen={menuOpen} navbar>
+            <NavbarToggler onClick={() => setMenuOpen(!menuOpen)}/> {/* When the toggler is clicked it will run setMenuOpen which will turn menuOpen into its opposite pf false/true*/}
+            <Collapse isOpen={menuOpen} navbar> {/* Collapse isOpen = false due to the default set on line 14*/}
                 <Nav className='ms-auto' navbar>
                     <NavItem>
                         <NavLink className='nav-link' to='/'>
@@ -43,6 +44,7 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                 </Nav>
+                <UserLoginForm/>
             </Collapse>
       </Navbar>
      );

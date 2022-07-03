@@ -4,11 +4,12 @@ import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from "./campsitesSlice";
 
 const CampsitesList = () => {
-  const campsites = useSelector(selectAllCampsites);
+  const campsites = useSelector(selectAllCampsites); //gets a hold of the [state] inside the selectAllCampsites i.e useSelector(state => state.campsites.campsitesArray)
+                                                     //must pass a function as its argument. the selectAllCampsites returns the array of campsites
 
   return (
     <Row className="ms-auto">
-      {campsites.map((campsite) => {
+      {campsites.map((campsite) => {   {/*iterate thru the campsites. for each one, create a <Col> with a <CampsiteCard/> within it*/}
         return (
           <Col 
             md="5" 
