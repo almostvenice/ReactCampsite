@@ -57,6 +57,12 @@ export const selectCampsiteById = (id) => (state) => {      //passing in [id] to
 }
 
 export const selectFeaturedCampsite = (state) => {      //passing the [state] from campsiteSlice
-    return ( state.campsites.campsitesArray.find(campsite => campsite.featured) ); // return the campsite with the property of [featured] set to [true]
-}
+    return {
+        featuredItem: state.campsites.campsitesArray.find(
+            campsite => campsite.featured
+        ), // return the campsite with the property of [featured] set to [true]
+        isLoading: state.campsites.isLoading,
+        errMsg: state.campsites.errMsg
+    };  
+};
  
