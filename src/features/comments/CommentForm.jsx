@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { validateCommentForm } from "../../utils/validateCommentForm";
-import { addComment } from "./commentsSlice";
+import { postComment } from "./commentsSlice";
 
 
 //Form for adding a comment to the details page
@@ -28,7 +28,7 @@ const CommentForm = ({ campsiteId }) => {
       date: new Date(Date.now()).toISOString()  //create a new [Date] object and set it to the time the form was submitted
     };
     
-    dispatch(addComment(comment)); // dispatch the action [addComment(comment)] to update the state of the component i.e updated the commentsSlice.js state to include this [comment] in its [commentsArray]
+    dispatch(postComment(comment)); // dispatch the action [addComment(comment)] to update the state of the component i.e updated the commentsSlice.js state to include this [comment] in its [commentsArray]
     setModalOpen(false);  //when submitted the modal closes as the [modalOpen] is set to [false] by the [useState]/[setModalOpen]
   };
   return (

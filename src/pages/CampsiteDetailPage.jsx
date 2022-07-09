@@ -17,6 +17,7 @@ const CampsiteDetailPage = () => {
     const errMsg = useSelector(state => state.campsites.errMsg);
 
     let content = null;
+
     if (isLoading) {
         content = <Loading/>;
     } else if (errMsg) {
@@ -25,7 +26,7 @@ const CampsiteDetailPage = () => {
         content = (
             <>
               <CampsiteDetail campsite={campsite}/>
-              <CommentsList campsiteId={campsiteId}/>  
+              <CommentsList campsiteId={campsiteId}/>
             </>
         )
     }
